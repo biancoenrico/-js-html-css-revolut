@@ -8,8 +8,16 @@ body{
 }
 li , span{
     cursor: pointer;
+    color: gray;
+    font-weight: bold;
 }
-
+.hidden li{
+    font-weight: normal;
+    padding: 10px 0;
+}
+li:hover{
+    color: black;
+}
 .container{
     display: flex;
     justify-content: space-between;

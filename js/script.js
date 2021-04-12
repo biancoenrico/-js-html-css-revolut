@@ -4,18 +4,21 @@ Utilizzate jQuery per mostrare e nascondere le dropdown.*/
 
 
 
-$('nav>ul>li').mouseenter(function () {
+$(document).ready( function (){
+    $('nav>ul>li').mouseenter(function () {
 
-    $(this).next().addClass('relative')
+        $(this).next().addClass('relative')
+        
+        if($(this).children() == $('button')){
+            !$(this).children().addClass('show');
+        }else{
+            $(this).children().addClass('show');
+        }
+    })
+    $('nav>ul>li').mouseleave(function () {
+        $(this).next().removeClass('relative')
+        $(this).children().removeClass('show');
     
-    if($(this).children() == $('button')){
-        !$(this).children().addClass('show');
-    }else{
-        $(this).children().addClass('show');
-    }
+    })
 })
-$('nav>ul>li').mouseleave(function () {
-    $(this).next().removeClass('relative')
-    $(this).children().removeClass('show');
 
-})
